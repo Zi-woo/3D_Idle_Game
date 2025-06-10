@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public Action <ItemData>addItem;
     public bool IsDead { get; private set; }
 
-    [SerializeField] private float detectionRadius = 20f;
+    [SerializeField] private float detectionRadius = 100f;
 
     void Awake()
     {
@@ -45,7 +45,17 @@ public class Player : MonoBehaviour
     public void MoveToTarget()
     {
         if (currentTarget != null)
-            Agent.SetDestination(currentTarget.position);
+        {
+            if (IsInAttackRange())
+            {
+                Agent.isStopped = true;
+            }
+            else
+            {
+                Agent.isStopped = false;
+                Agent.SetDestination(currentTarget.position);
+            }
+        }
     }
 
     public bool HasTarget()
@@ -55,7 +65,7 @@ public class Player : MonoBehaviour
 
     public bool IsInAttackRange()
     {
-        return currentTarget != null && Vector3.Distance(transform.position, currentTarget.position) < 2.5f;
+        return currentTarget != null && Vector3.Distance(transform.position, currentTarget.position) <= 2.5f;
     }
 
     public void FindNearestEnemy()

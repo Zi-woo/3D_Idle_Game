@@ -15,8 +15,8 @@ MonoBehaviour:
   level: 1
   attack: 25
   defense: 10
-  CurHP: 0
-  MaxHP: 0
-  experience: 70
-  gold: 70
+  CurHP: 100
+  MaxHP: 100
+  experience: 0
+  gold: 0
   currentStage: 1

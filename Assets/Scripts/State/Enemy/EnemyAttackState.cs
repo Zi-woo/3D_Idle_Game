@@ -17,6 +17,9 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void Update()
     {
+        Vector3 direction = (enemy.transform.position - Player.Instance.transform.position).normalized;
+        direction.y = 0f;
+        Player.Instance.transform.rotation = Quaternion.LookRotation(direction);
         if (enemy.IsDead)
         {
             stateMachine.ChangeState(new EnemyDieState(enemy, stateMachine));

@@ -58,18 +58,4 @@ public class UIManager : MonoBehaviour
     {
         stageText.text = $"Stage {stage}";
     }
-
-    public void SetMission(string mission)
-    {
-        missionText.text = mission;
-    }
-
-    public void SetSkillName(int index, float time)
-    {
-        if(index < 0 || index >= SetSkillNameTexts.Length)
-        {
-             return;
-        }
-        SetSkillNameTexts[index].text = time > 0 ? time.ToString("0.0") : "";
-    }
 }
