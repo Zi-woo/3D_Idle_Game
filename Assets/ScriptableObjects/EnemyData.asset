@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4f8e7c083d8be4c8cf71a8fc9bf658, type: 3}
+  m_Name: EnemyData
+  m_EditorClassIdentifier: 
+  level: 1
+  attack: 2
+  defense: 2
+  CurHP: 100
+  MaxHP: 100
+  rewardExperience: 10
+  rewardGold: 10
+  dropItem: {fileID: 11400000, guid: a3313f0ae58668a4d979da2c01629fcf, type: 2}
