@@ -28,7 +28,6 @@ public class PlayerAttackState : PlayerBaseState
 
         if (timer <= 0f)
         {
-            // 공격 타이밍 (ex: 데미지 처리 또는 애니메이션 이벤트 활용)
             timer = attackCooldown;
         }
 
