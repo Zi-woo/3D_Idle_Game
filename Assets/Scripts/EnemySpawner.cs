@@ -17,6 +17,8 @@ public class EnemySpawner : MonoBehaviour
 
     void Start()
     {
+        int stage = GameManager.Instance.GetStage();
+        int maxEnemies = GetEnemyCountByStage(stage);
         for (int i = 0; i < maxEnemies; i++)
         {
             TrySpawn();
@@ -31,7 +33,15 @@ public class EnemySpawner : MonoBehaviour
             spawnRequests++;
         }
     }
-
+    int GetEnemyCountByStage(int stage)
+    {
+        switch (stage)
+        {
+            case 1: return 2;
+            case 2: return 10;
+            default: return 1;
+        }
+    }
     public void ReturnToPool(Enemy enemy)
     {
         activeEnemies.Remove(enemy);
